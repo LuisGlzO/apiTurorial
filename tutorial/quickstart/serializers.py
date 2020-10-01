@@ -2,7 +2,6 @@ from django.contrib.auth.models import User, Group
 from rest_framework import serializers
 from .models import Persona #importé mi modelo persona
 
-"""
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
@@ -13,8 +12,8 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Group
         fields = ['url', 'name']
-"""
-class PersonaSerializer(serializers.ModelSerializer):
+
+class PersonaSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Persona
         fields = ['id', 'nombre', 'apellido,' 'correo']
